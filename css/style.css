@@ -1,0 +1,72 @@
+body {
+    background-image: url('background.jpg'); /* Change 'background.jpg' to your background image */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff; /* Set text color to white */
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+main.container {
+    padding: 20px;
+}
+
+main h1 {
+    text-align: center;
+}
+
+/* Styles for links */
+.project a {
+    color: #007bff; /* Set link color to blue */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Hover effect for links */
+.project a:hover {
+    color: #ffffff; /* Darker blue color on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #ffffff; /* Set text color to white */
+}
+
+/* Styles for <a> tags */
+a {
+    color: #ffffff; /* Set link color to white */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for <a> tags */
+a:hover {
+    color: #ffffff; /* Change text color to white on hover */
+    background-color: #007bff; /* Add blue background on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* Additional padding for the final project idea */
+.final-project {
+    padding-left: 20px; /* Add padding to the left */
+}
+
+/* Media queries for phones */
+@media only screen and (max-width: 576px) {
+    .tablet, .desktop { display: none; }
+}
+
+/* Media queries for tablets */
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .desktop, .phone { display: none; }
+}
+
+/* Media queries for desktops */
+@media only screen and (min-width: 993px) {
+    .tablet, .phone { display: none; }
+}
