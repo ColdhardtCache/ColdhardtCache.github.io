@@ -1,0 +1,103 @@
+/* Resetting default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #333; /* Dark text color */
+}
+
+/* Styling the header */
+header {
+    background-color: #343a40; /* Dark gray background */
+    padding: 20px;
+    text-align: center;
+    color: #fff; /* White text color */
+}
+
+/* Styling the top navigation */
+#topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Add a class to style the section containing the image */
+#photo-section {
+    max-width: 600px; /* Adjust the maximum width as per your preference */
+    margin: 0 auto; /* Center the section horizontally */
+    padding: 20px; /* Add some padding for better presentation */
+}
+
+/* Style the image */
+#photo {
+    max-width: 100%; /* Ensure the image does not exceed the width of its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper alignment */
+    margin: 0 auto; /* Center the image within its container */
+}
+
+/* Styling the name button */
+#name {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Styling the navigation buttons */
+#topnav button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 20px; /* Add space between buttons */
+    text-decoration: none;
+}
+
+/* Styling the section */
+section {
+    text-align: center;
+    padding: 50px;
+}
+
+/* Styling the heading */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Style the text content */
+#simpleInfoSec {
+    text-align: center; /* Center-align the text */
+    margin-top: 20px; /* Add some space between the image and text */
+}
+
+/* Style the button */
+button {
+    display: block; /* Ensure the button occupies its own line */
+    margin: 20px auto; /* Center the button */
+}
+
+/* Styling the big button to projects */
+#bigButtonToProj {
+    background-color: #007bff; /* Blue button color */
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#bigButtonToProj:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
