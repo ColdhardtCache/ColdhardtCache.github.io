@@ -1,0 +1,174 @@
+/* App.css */
+
+/* General Body Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+    background-color: #111827 !important;
+    color: #f3f4f6 !important;
+}
+
+/* Container Styles */
+.container {
+  max-width: 1200px; /* Adjust based on your layout needs */
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #000000; /* Black background for primary button */
+  color: #ffffff; /* White text color */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #333333; /* Darker black on hover */
+}
+
+/* Card Styles */
+.card {
+  background-color: #1f1f1f; /* Dark background for card */
+  border: 1px solid #333333; /* Dark border */
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.card-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-body {
+  font-size: 1rem;
+}
+
+/* Text Styles */
+.text-center {
+  text-align: center;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
+}
+
+/* Utility Classes */
+.m-0 {
+  margin: 0;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #1f1f1f; /* Dark background for Navbar */
+  color: #ffffff; /* White text */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.navbar-links {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.navbar-link {
+  margin: 0 1rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  text-decoration: underline;
+}
+
+.navbar-menu {
+  display: flex; /* Ensure the menu is visible on larger screens */
+}
+
+.navbar-toggle {
+  display: none; /* Hide toggle button on larger screens */
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1f1f1f;
+    z-index: 1000;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-link {
+    margin: 0.5rem 0;
+    padding: 1rem;
+  }
+
+  .navbar-toggle {
+    display: block; /* Show toggle button on small screens */
+  }
+}
+
+/* Ensure all elements fit within the dark mode theme */
+.dark .navbar {
+  background-color: #1f1f1f;
+}
+
+.dark .card {
+  background-color: #1f1f1f;
+  border: 1px solid #333333;
+}
