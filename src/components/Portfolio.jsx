@@ -5,7 +5,7 @@ function Portfolio() {
     <>
 
       <main className="container mx-auto p-4 pt-20">
-        <h1 className="text-center text-4xl font-bold mb-4">Computer Science Project History</h1>
+        <h1 className="text-center text-4xl font-bold mb-4">Computer Science & Cybersecurity Project History</h1>
         <h2 className="text-center text-2xl mb-4">My Recent Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="p-4 bg-custom-dark shadow-md rounded-lg">
@@ -23,7 +23,13 @@ function Portfolio() {
           <div className="p-4 bg-custom-dark shadow-md rounded-lg">
             <a href="https://www.cybertrustmass.org/" className="text-xl font-semibold hover:underline">CyberTrust API Project</a>
             <p className="mt-2">
-              In this project, I helped facilitate the creation of an API project used to automate calls to the SentinelOne API. This project was also used to automate reporting for incidents, alerts, and Quarterly Business Reports. It is a full-stack Python program for the private company CyberTrust and cannot be viewed due to being proprietary.
+              This internal facing application is used to automate calls to the SentinelOne API. This led to the automation of client provisioning and the reporting for incidents, alerts, and Quarterly Business Reports for clients streamlining hours of labor into seconds! It is a full-stack Python program for the private company CyberTrust and cannot be viewed due to being proprietary. Feel free to contact them for an overview.
+            </p>
+          </div>
+          <div className="p-4 bg-custom-dark shadow-md rounded-lg">
+            <a href="https://www.cybertrustmass.org/" className="text-xl font-semibold hover:underline">CyberTrust Powershell Project</a>
+            <p className="mt-2">
+            This is a client facing project that is used during the initial vulnerability assessment to assess a clients Microsoft Entra ID and Active Directory domains to highlight configurations that are not in alignment with the current CIS control standards. I created this project entirely in powershell and incorporate tools like bloodhound to enumerate both cloud and on prem architectures. This is also a proprietary application of CyberTrust Massachusetts and therefore cannot be shown without explicit permission. Please contact them for further details.
             </p>
           </div>
         </div>
@@ -32,7 +38,12 @@ function Portfolio() {
           <h2 className="text-center text-2xl font-bold mb-4">Relevant Coursework</h2>
           <h3 className="text-center text-xl mb-2">
             <a href="https://www.bridgew.edu/academics/majors-minors-undergraduate/computer-science" target="_blank" className="text-blue-500 hover:underline">
-              Computer Science/Cybersecurity
+              Computer Science
+            </a>
+          </h3>
+          <h3 className="text-center text-xl mb-2">
+          <a href="https://www.bridgew.edu/academics/majors-minors-undergraduate/cybersecurity" target="_blank" className="text-blue-500 hover:underline">
+              Cybersecurity
             </a>
           </h3>
           <p className="text-center mb-4">All classes listed were taken at Bridgewater State University. Click above for more information!</p>
@@ -52,7 +63,7 @@ function Portfolio() {
         </div>
       </main>
 
-      <footer className="text-center p-4 bg-gray-100">
+      <footer className="text-center p-4 bg-custom-dark">
         © 2024 by Brian Grier. All Rights Reserved.
       </footer>
     </>

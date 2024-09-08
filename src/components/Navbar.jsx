@@ -25,7 +25,7 @@ function NavbarComponent() {
           <Link className="navbar-link" to="/blog">Blog</Link>
           <Link className="navbar-link" to="/resume">Resume</Link>
           <Link className="navbar-link" to="/contact">Contact</Link>
-          <a className="navbar-link" href="https://www.linkedin.com/in/briangrier/" target="_blank" rel="noopener noreferrer">
+          <a className="navbar-link" href="https://www.linkedin.com/in/brian-grier-007016232/" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin"></i> LinkedIn
           </a>
           <a className="navbar-link" href="https://github.com/ColdhardtCache" target="_blank" rel="noopener noreferrer">
