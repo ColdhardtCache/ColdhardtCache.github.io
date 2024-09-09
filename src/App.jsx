@@ -9,6 +9,9 @@ import Resume from './components/Resume';  // Add this line if you have a separa
 import Contact from './components/Contact'; 
 import './App.css';
 
+
+{/* Lookup add tailwindcss project to github site */}
+
 function App() {
   useEffect(() => {
     document.documentElement.classList.add('dark');
