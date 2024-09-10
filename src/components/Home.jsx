@@ -1,4 +1,5 @@
 import React from 'react';
+import myImage from '../../public/media/pfp.jpeg';
 
 function Home() {
   return (
@@ -8,8 +9,8 @@ function Home() {
       {/* Add your image here */}
       <div className="flex justify-center mb-4">
         <img 
-          src="../media/pfp.png" 
-          alt="Brian Grier" 
+          src={myImage} 
+          alt="pfp" 
           className="w-48 h-48 rounded-full object-cover shadow-lg"
         />
       </div>

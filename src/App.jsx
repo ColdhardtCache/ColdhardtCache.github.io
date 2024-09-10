@@ -10,8 +10,6 @@ import Contact from './components/Contact';
 import './App.css';
 
 
-{/* Lookup add tailwindcss project to github site */}
-
 function App() {
   useEffect(() => {
     document.documentElement.classList.add('dark');
