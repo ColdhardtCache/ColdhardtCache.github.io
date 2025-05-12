@@ -1,32 +1,38 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
 import NavbarComponent from './components/Navbar';
-import Home from './components/Home';  // Add this line
-import About from './components/About';
+import Home from './components/Home';
 import Blog from './components/Blog';
 import Portfolio from './components/Portfolio';
-import Resume from './components/Resume';  // Add this line if you have a separate Resume component
+import Resume from './components/Resume';
 import Contact from './components/Contact'; 
-import './App.css';
-
+import './index.css'; // Import index.css first for Tailwind directives
+import './App.css';    // Then import App.css for custom styles
 
 function App() {
   useEffect(() => {
+    // Ensure dark mode is activated
     document.documentElement.classList.add('dark');
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#1f1f1f' }} className="text-gray-100 min-h-screen">
+    <div className="min-h-screen bg-gray-900 text-white">
       <NavbarComponent />
-      <div className="container mx-auto p-4 pt-20">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/resume" element={<Resume />} />  {/* Add this line if you have a Resume route */}
-          <Route path="/contact" element={<Contact />} />  {/* Add this line if you have a Resume route */}
-        </Routes>
+      <div style={{ scrollBehavior: 'smooth' }} className="w-full max-w-full">
+        <section id="home" className="w-full">
+          <Home />
+        </section>
+        <section id="portfolio" className="w-full mt-12">
+          <Portfolio />
+        </section>
+        <section id="blog" className="w-full mt-12">
+          <Blog />
+        </section>
+        <section id="resume" className="w-full mt-12">
+          <Resume />
+        </section>
+        <section id="contact" className="w-full mt-12">
+          <Contact />
+        </section>
       </div>
     </div>
   );

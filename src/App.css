@@ -1,174 +1,110 @@
-/* App.css */
+/* App.css - Single Page Portfolio */
 
-/* General Body Styles */
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    background-color: #111827 !important;
-    color: #f3f4f6 !important;
+  padding-top: 70px; /* Space for fixed navbar */
 }
 
-/* Container Styles */
-.container {
-  max-width: 1200px; /* Adjust based on your layout needs */
-  margin: 0 auto;
-  padding: 1rem;
+/* Reset some browser defaults */
+* {
+  box-sizing: border-box;
 }
 
-/* Button Styles */
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-}
-
-.btn-primary {
-  background-color: #000000; /* Black background for primary button */
-  color: #ffffff; /* White text color */
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: #333333; /* Darker black on hover */
-}
-
-/* Card Styles */
-.card {
-  background-color: #1f1f1f; /* Dark background for card */
-  border: 1px solid #333333; /* Dark border */
-  border-radius: 0.25rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-}
-
-.card-header {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.card-body {
-  font-size: 1rem;
-}
-
-/* Text Styles */
-.text-center {
-  text-align: center;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-}
-
-.font-bold {
-  font-weight: bold;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
-}
-
-/* Utility Classes */
-.m-0 {
-  margin: 0;
-}
-
-.p-4 {
-  padding: 1rem;
-}
-
-/* Navbar Styles */
-.navbar {
-  background-color: #1f1f1f; /* Dark background for Navbar */
-  color: #ffffff; /* White text */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: relative;
-}
-
-.navbar-brand {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.navbar-links {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.navbar-link {
-  margin: 0 1rem;
-  color: #ffffff;
+a {
   text-decoration: none;
+  color: inherit;
 }
 
-.navbar-link:hover {
-  text-decoration: underline;
+button {
+  cursor: pointer;
 }
 
-.navbar-menu {
-  display: flex; /* Ensure the menu is visible on larger screens */
+/* Section styles */
+section {
+  padding: 1rem 0;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.navbar-toggle {
-  display: none; /* Hide toggle button on larger screens */
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1.25rem;
+/* Utility classes that won't conflict with your inline styles */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-@media (max-width: 1024px) {
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #1f1f1f;
-    z-index: 1000;
+/* Animation keyframes for reuse */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.05); }
+  100% { opacity: 0.7; transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateX(-50%);
   }
-
-  .navbar-links.active {
-    display: flex;
+  40% {
+    transform: translateY(-20px) translateX(-50%);
   }
-
-  .navbar-link {
-    margin: 0.5rem 0;
-    padding: 1rem;
-  }
-
-  .navbar-toggle {
-    display: block; /* Show toggle button on small screens */
+  60% {
+    transform: translateY(-10px) translateX(-50%);
   }
 }
 
-/* Ensure all elements fit within the dark mode theme */
-.dark .navbar {
-  background-color: #1f1f1f;
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
-.dark .card {
-  background-color: #1f1f1f;
-  border: 1px solid #333333;
+/* Media query helper for mobile responsiveness */
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  section {
+    min-height: auto;
+    padding: 4rem 1rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-hidden {
+    display: none !important;
+  }
 }
