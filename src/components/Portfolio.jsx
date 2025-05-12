@@ -1,72 +1,292 @@
 
+import React, { useState } from 'react';
+import { FaGithub, FaExternalLinkAlt, FaCode, FaServer, FaShieldAlt, FaTerminal } from 'react-icons/fa';
 
 function Portfolio() {
+  const [activeTab, setActiveTab] = useState('projects');
+
   return (
-    <>
+    <div className="w-full max-w-[98%] mx-auto p-2 text-white">
+      <h1 className="text-4xl font-bold text-center mb-3 bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
+        My Portfolio
+      </h1>
+      <p className="text-center text-xl text-gray-300 mb-4 max-w-3xl mx-auto">
+        A collection of cybersecurity and software development projects showcasing my technical skills and expertise.
+      </p>
 
-      <main className="container mx-auto p-4 pt-20">
-        <h1 className="text-center text-4xl font-bold mb-4">Computer Science & Cybersecurity Project History</h1>
-        <h2 className="text-center text-2xl mb-4">My Recent Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="p-4 bg-custom-dark shadow-md rounded-lg">
-            <a href="https://github.com/matt-connors/citation-generator" className="text-xl font-semibold hover:underline">Citation Generator</a>
-            <p className="mt-2">
-              In this project, a buddy and I created a citation generator to produce multiple styles of citations for websites, books, and journals for a web development class. Eventually, YouTube citations will be added. Visit <a href="https://mlagenerator.com/" target="_blank" className="text-blue-500 hover:underline">mlagenerator.com</a> to use it!
-            </p>
+      {/* Portfolio Tabs */}
+      <div className="flex justify-center mb-4">
+        <div className="bg-custom-dark rounded-full p-1 inline-flex shadow-xl border border-gray-800">
+          <button
+            className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
+              activeTab === 'projects' 
+                ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg' 
+                : 'text-gray-400 hover:text-white'
+            }`}
+            onClick={() => setActiveTab('projects')}
+          >
+            Projects
+          </button>
+          <button
+            className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
+              activeTab === 'courses' 
+                ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg' 
+                : 'text-gray-400 hover:text-white'
+            }`}
+            onClick={() => setActiveTab('courses')}
+          >
+            Coursework
+          </button>
+        </div>
+      </div>
+
+      {/* Projects Tab */}
+      {activeTab === 'projects' && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Project 1 */}
+          <div className="bg-custom-dark border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-primary-900/20 hover:shadow-xl transition-all group">
+            <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+            <div className="p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-400 mr-3">
+                  <FaCode />
+                </div>
+                <h3 className="text-xl font-semibold group-hover:text-primary-400 transition-colors">Citation Generator</h3>
+              </div>
+              <p className="text-gray-300 mb-6">
+                Created a citation generator to produce multiple styles of citations for websites, books, and journals. The tool supports various citation formats and will eventually include YouTube citations.
+              </p>
+              <div className="flex justify-between items-center mt-auto">
+                <div className="text-xs font-medium px-3 py-1 rounded-full bg-primary-500/10 text-primary-400">Web Development</div>
+                <div className="flex space-x-3">
+                  <a 
+                    href="https://github.com/matt-connors/citation-generator" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-400 hover:text-white transition-colors"
+                    aria-label="GitHub repository"
+                  >
+                    <FaGithub size={18} />
+                  </a>
+                  <a 
+                    href="https://mlagenerator.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-400 hover:text-white transition-colors"
+                    aria-label="Visit live site"
+                  >
+                    <FaExternalLinkAlt size={16} />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="p-4 bg-custom-dark shadow-md rounded-lg">
-            <a href="https://github.com/B-IJoe1/TechMinds" className="text-xl font-semibold hover:underline">TechMinds Patient X-Ray Tracker</a>
-            <p className="mt-2">
-              During my time at Hack.Diversity, I led a team of 6 full-stack engineers to create a portal for medical professionals to track X-ray information for their patients. This project was created using the MERN stack! More information can be found <a href="https://youtu.be/0apNoHeJ7gI" target="_blank" className="text-blue-500 hover:underline">HERE</a>.
-            </p>
+
+          {/* Project 2 */}
+          <div className="bg-custom-dark border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-primary-900/20 hover:shadow-xl transition-all group">
+            <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+            <div className="p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-secondary-500/10 flex items-center justify-center text-secondary-400 mr-3">
+                  <FaServer />
+                </div>
+                <h3 className="text-xl font-semibold group-hover:text-secondary-400 transition-colors">TechMinds Patient X-Ray Tracker</h3>
+              </div>
+              <p className="text-gray-300 mb-6">
+                Led a team of 6 full-stack engineers to create a portal for medical professionals to track X-ray information for their patients using the MERN stack.
+              </p>
+              <div className="flex justify-between items-center mt-auto">
+                <div className="text-xs font-medium px-3 py-1 rounded-full bg-secondary-500/10 text-secondary-400">Full Stack</div>
+                <div className="flex space-x-3">
+                  <a 
+                    href="https://github.com/B-IJoe1/TechMinds" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-400 hover:text-white transition-colors"
+                    aria-label="GitHub repository"
+                  >
+                    <FaGithub size={18} />
+                  </a>
+                  <a 
+                    href="https://youtu.be/0apNoHeJ7gI" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-400 hover:text-white transition-colors"
+                    aria-label="Watch demo"
+                  >
+                    <FaExternalLinkAlt size={16} />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="p-4 bg-custom-dark shadow-md rounded-lg">
-            <a href="https://www.cybertrustmass.org/" className="text-xl font-semibold hover:underline">CyberTrust API Project</a>
-            <p className="mt-2">
-              This internal facing application is used to automate calls to the SentinelOne API. This led to the automation of client provisioning and the reporting for incidents, alerts, and Quarterly Business Reports for clients streamlining hours of labor into seconds! It is a full-stack Python program for the private company CyberTrust and cannot be viewed due to being proprietary. Feel free to contact them for an overview.
-            </p>
+
+          {/* Project 3 */}
+          <div className="bg-custom-dark border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-primary-900/20 hover:shadow-xl transition-all group">
+            <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+            <div className="p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-400 mr-3">
+                  <FaShieldAlt />
+                </div>
+                <h3 className="text-xl font-semibold group-hover:text-primary-400 transition-colors">CyberTrust API Project</h3>
+              </div>
+              <p className="text-gray-300 mb-6">
+                Developed an internal application that automates calls to the SentinelOne API for client provisioning and reporting, streamlining hours of labor into seconds.
+              </p>
+              <div className="flex justify-between items-center mt-auto">
+                <div className="text-xs font-medium px-3 py-1 rounded-full bg-primary-500/10 text-primary-400">Python</div>
+                <div className="flex space-x-3">
+                  <a 
+                    href="https://www.cybertrustmass.org/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-400 hover:text-white transition-colors"
+                    aria-label="Company website"
+                  >
+                    <FaExternalLinkAlt size={16} />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="p-4 bg-custom-dark shadow-md rounded-lg">
-            <a href="https://www.cybertrustmass.org/" className="text-xl font-semibold hover:underline">CyberTrust Powershell Project</a>
-            <p className="mt-2">
-            This is a client facing project that is used during the initial vulnerability assessment to assess a clients Microsoft Entra ID and Active Directory domains to highlight configurations that are not in alignment with the current CIS control standards. I created this project entirely in powershell and incorporate tools like bloodhound to enumerate both cloud and on prem architectures. This is also a proprietary application of CyberTrust Massachusetts and therefore cannot be shown without explicit permission. Please contact them for further details.
-            </p>
+
+          {/* Project 4 */}
+          <div className="bg-custom-dark border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-primary-900/20 hover:shadow-xl transition-all group">
+            <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+            <div className="p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-secondary-500/10 flex items-center justify-center text-secondary-400 mr-3">
+                  <FaTerminal />
+                </div>
+                <h3 className="text-xl font-semibold group-hover:text-secondary-400 transition-colors">CyberTrust PowerShell Project</h3>
+              </div>
+              <p className="text-gray-300 mb-6">
+                Created a client-facing tool for vulnerability assessment that evaluates Microsoft Entra ID and Active Directory domains against CIS control standards.
+              </p>
+              <div className="flex justify-between items-center mt-auto">
+                <div className="text-xs font-medium px-3 py-1 rounded-full bg-secondary-500/10 text-secondary-400">PowerShell</div>
+                <div className="flex space-x-3">
+                  <a 
+                    href="https://www.cybertrustmass.org/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-400 hover:text-white transition-colors"
+                    aria-label="Company website"
+                  >
+                    <FaExternalLinkAlt size={16} />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      )}
 
-        <div className="mt-10">
-          <h2 className="text-center text-2xl font-bold mb-4">Relevant Coursework</h2>
-          <h3 className="text-center text-xl mb-2">
-            <a href="https://www.bridgew.edu/academics/majors-minors-undergraduate/computer-science" target="_blank" className="text-blue-500 hover:underline">
-              Computer Science
-            </a>
-          </h3>
-          <h3 className="text-center text-xl mb-2">
-          <a href="https://www.bridgew.edu/academics/majors-minors-undergraduate/cybersecurity" target="_blank" className="text-blue-500 hover:underline">
-              Cybersecurity
-            </a>
-          </h3>
-          <p className="text-center mb-4">All classes listed were taken at Bridgewater State University. Click above for more information!</p>
-          <ul className="list-disc pl-5">
-            <li>Computer Science I & II (Python & Java Programming)</li>
-            <li>Intro Computer Organization (Assembly and C++ programming, memory management)</li>
-            <li>Data Structures and Algorithms (Python based)</li>
-            <li>Applied Cryptography (Research/Program/Understand common methods of Cryptography)</li>
-            <li>Computer Forensics (Incident Response & Disaster Recovery)</li>
-            <li>Web Development (Javascript / React Programming)</li>
-            <li>Internship in Computer Science / Cybersecurity (Document experience working at CyberTrust Mass)</li>
-            <li>Network Security (In progress)</li>
-            <li>Intro to Database Systems (In progress)</li>
-            <li>Software Engineering (In progress)</li>
-            <li>Mobile Device Forensics (In progress)</li>
-          </ul>
+      {/* Coursework Tab */}
+      {activeTab === 'courses' && (
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-custom-dark rounded-xl p-8 shadow-xl border border-gray-800">
+            <div className="mb-6 text-center">
+              <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent inline-block">Educational Background</h3>
+              <p className="text-gray-400">
+                Courses taken at{" "}
+                <a 
+                  href="https://www.bridgew.edu/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary-400 hover:text-primary-300 transition-colors"
+                >
+                  Bridgewater State University
+                </a>
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+              <div>
+                <h4 className="text-xl font-medium mb-4 flex items-center">
+                  <div className="w-8 h-8 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-400 mr-2">
+                    <FaCode size={14} />
+                  </div>
+                  <a 
+                    href="https://www.bridgew.edu/academics/majors-minors-undergraduate/computer-science" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-primary-400 transition-colors"
+                  >
+                    Computer Science
+                  </a>
+                </h4>
+                <ul className="space-y-2 pl-10">
+                  <li className="text-gray-300 flex items-start">
+                    <span className="text-primary-500 mr-2">•</span>
+                    Computer Science I & II (Python & Java)
+                  </li>
+                  <li className="text-gray-300 flex items-start">
+                    <span className="text-primary-500 mr-2">•</span>
+                    Intro Computer Organization (Assembly and C++)
+                  </li>
+                  <li className="text-gray-300 flex items-start">
+                    <span className="text-primary-500 mr-2">•</span>
+                    Data Structures and Algorithms (Python)
+                  </li>
+                  <li className="text-gray-300 flex items-start">
+                    <span className="text-primary-500 mr-2">•</span>
+                    Web Development (JavaScript / React)
+                  </li>
+                  <li className="text-gray-300 flex items-start">
+                    <span className="text-primary-500 mr-2">•</span>
+                    Intro to Database Systems (In progress)
+                  </li>
+                  <li className="text-gray-300 flex items-start">
+                    <span className="text-primary-500 mr-2">•</span>
+                    Software Engineering (In progress)
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="text-xl font-medium mb-4 flex items-center">
+                  <div className="w-8 h-8 rounded-full bg-secondary-500/10 flex items-center justify-center text-secondary-400 mr-2">
+                    <FaShieldAlt size={14} />
+                  </div>
+                  <a 
+                    href="https://www.bridgew.edu/academics/majors-minors-undergraduate/cybersecurity" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-secondary-400 transition-colors"
+                  >
+                    Cybersecurity
+                  </a>
+                </h4>
+                <ul className="space-y-2 pl-10">
+                  <li className="text-gray-300 flex items-start">
+                    <span className="text-secondary-500 mr-2">•</span>
+                    Applied Cryptography
+                  </li>
+                  <li className="text-gray-300 flex items-start">
+                    <span className="text-secondary-500 mr-2">•</span>
+                    Computer Forensics (IR & Disaster Recovery)
+                  </li>
+                  <li className="text-gray-300 flex items-start">
+                    <span className="text-secondary-500 mr-2">•</span>
+                    Network Security (In progress)
+                  </li>
+                  <li className="text-gray-300 flex items-start">
+                    <span className="text-secondary-500 mr-2">•</span>
+                    Mobile Device Forensics (In progress)
+                  </li>
+                  <li className="text-gray-300 flex items-start">
+                    <span className="text-secondary-500 mr-2">•</span>
+                    Internship in Cybersecurity (CyberTrust)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-
-      <footer className="text-center p-4 bg-custom-dark">
-        © 2024 by Brian Grier. All Rights Reserved.
-      </footer>
-    </>
+      )}
+    </div>
   );
 }
 
