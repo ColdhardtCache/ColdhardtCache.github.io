@@ -1,9 +1,11 @@
 import React from 'react';
 import { FaGraduationCap, FaAward } from 'react-icons/fa';
+import Skills from './Skills';
 
 function Education() {
+
   return (
-    <div style={{
+      <div style={{
       width: '100%',
       padding: '2rem 0',
       color: 'white',
@@ -165,11 +167,13 @@ function Education() {
           </div>
         </div>
 
-        {/* Skills */}
+        <Skills />
+
+        {/* Programming Languages with Animation */}
         <div className="mb-12">
           <div className="flex items-center mb-5">
-            <FaAward className="text-primary-500 text-3xl mr-3" />
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Skills</h2>
+            <FaGraduationCap className="text-primary-500 text-3xl mr-3" />
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Programming Languages</h2>
           </div>
           <div style={{
             position: 'relative',
@@ -178,9 +182,40 @@ function Education() {
             borderRadius: '16px',
             border: '1px solid rgba(30, 41, 59, 0.8)',
             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            padding: '2rem',
-            paddingTop: 'calc(2rem + 3px)'
+            padding: '1rem',
+            paddingTop: 'calc(1rem + 9px)',
+            overflow: 'hidden'
           }}>
+            <style dangerouslySetInnerHTML={{ __html: `
+              @keyframes slideText {
+                0% { transform: translateX(100%); }
+                100% { transform: translateX(-50%); }
+              }
+              .language-scroller {
+                display: flex;
+                white-space: nowrap;
+                overflow: hidden;
+              }
+              .language-ticker {
+                display: inline-flex;
+                animation: slideText 20s linear infinite;
+              }
+              .language-item {
+                display: inline-block;
+                padding: 0.75rem 1.5rem;
+                margin: 0 0.5rem;
+                background: rgba(59, 130, 246, 0.15);
+                border-radius: 50px;
+                color: #e2e8f0;
+                font-weight: 500;
+                transition: all 0.3s ease;
+              }
+              .language-item:hover {
+                transform: translateY(-5px);
+                background: rgba(59, 130, 246, 0.25);
+              }
+            `}} />
+
             <div style={{
               position: 'absolute',
               top: 0,
@@ -191,26 +226,28 @@ function Education() {
               borderTopLeftRadius: '16px',
               borderTopRightRadius: '16px'
             }}></div>
-            <div className="flex flex-col space-y-4">
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-primary-400">General Skills</h3>
-                <p className="text-gray-300">Packet Analysis, Communication, Documentation, Organization, Optimization, API Creation and Automation</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-primary-400">Frameworks</h3>
-                <p className="text-gray-300">NIST, MITRE ATT&CK, CIS</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-primary-400">Programming Languages</h3>
-                <p className="text-gray-300">Python, Java, CSS, HTML, JavaScript, Bash, PowerShell, SQL</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-primary-400">Tools</h3>
-                <p className="text-gray-300">Wireshark, Forensic Tool Kit (FTK), Microsoft Office 365, Git/GitHub, ServiceNow, Jira, Visual Studio Code, KnowledgeBase, Slack, MongoDB, PostgreSQL, Postman, Xmind, SentinelOne, Splunk, ImmersiveLabs</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-primary-400">Operating Systems</h3>
-                <p className="text-gray-300">Windows, MacOS, Kali Linux</p>
+
+            <div className="language-scroller">
+              <div className="language-ticker">
+                <span className="language-item">Python</span>
+                <span className="language-item">Java</span>
+                <span className="language-item">JavaScript</span>
+                <span className="language-item">HTML</span>
+                <span className="language-item">CSS</span>
+                <span className="language-item">Bash</span>
+                <span className="language-item">PowerShell</span>
+                <span className="language-item">SQL</span>
+
+                {/* These duplicates are needed for continuous animation,
+                    but they'll only show after the first set scrolls off-screen */}
+                <span className="language-item" style={{opacity: 0}}>Python</span>
+                <span className="language-item" style={{opacity: 0}}>Java</span>
+                <span className="language-item" style={{opacity: 0}}>JavaScript</span>
+                <span className="language-item" style={{opacity: 0}}>HTML</span>
+                <span className="language-item" style={{opacity: 0}}>CSS</span>
+                <span className="language-item" style={{opacity: 0}}>Bash</span>
+                <span className="language-item" style={{opacity: 0}}>PowerShell</span>
+                <span className="language-item" style={{opacity: 0}}>SQL</span>
               </div>
             </div>
           </div>
