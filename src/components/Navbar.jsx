@@ -21,7 +21,7 @@ function NavbarComponent() {
   // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'portfolio', 'blog', 'resume', 'contact'];
+      const sections = ['home', 'about', 'portfolio', 'blog', 'resume', 'contact'];
       const scrollPosition = window.scrollY + 100; // Add offset for navbar height
 
       for (const section of sections) {
@@ -96,6 +96,7 @@ function NavbarComponent() {
         >
           {[
             { id: 'home', label: 'Home' },
+            { id: 'about', label: 'About Me' },
             { id: 'portfolio', label: 'Portfolio' },
             { id: 'blog', label: 'Blog' },
             { id: 'resume', label: 'Resume' },
