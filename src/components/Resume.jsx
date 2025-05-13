@@ -1,100 +1,14 @@
 import React from 'react';
-import { FaDownload, FaGraduationCap, FaCode, FaAward, FaBriefcase, FaHandsHelping } from 'react-icons/fa';
+import { FaDownload, FaCode, FaBriefcase, FaHandsHelping } from 'react-icons/fa';
 
 function Resume() {
   return (
     <div className="w-full max-w-[98%] mx-auto p-2 text-white">
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-4">
-          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Brian Grier</h1>
-          <p className="text-xl text-gray-300 mb-2">Cybersecurity Specialist & Software Developer</p>
-          <p className="text-gray-300 mb-1">508-375-1373 · brian.grier16@gmail.com · Bridgewater, MA 02325</p>
-          <p className="mb-3">
-            <a 
-              href="https://github.com/coldhardtcache" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-primary-400 hover:text-primary-300 transition-colors"
-            >
-              https://github.com/coldhardtcache
-            </a>
-          </p>
+          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">My Resume</h1>
         </div>
-      
-        {/* Education */}
-        <div className="mb-6">
-          <div className="flex items-center mb-3">
-            <FaGraduationCap className="text-primary-500 text-2xl mr-3" />
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Education</h2>
-          </div>
-          <div className="bg-custom-dark rounded-xl shadow-lg border border-gray-800 overflow-hidden">
-            <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-white mb-1">Bridgewater State University, Bridgewater, MA</h3>
-            <p className="text-gray-300">Bachelor of Science in Cybersecurity</p>
-            <p className="text-gray-400 text-sm">Expected Graduation: May 2026</p>
-            </div>
-          </div>
-        </div>
-      
-        {/* Technical Skills */}
-        <div className="mb-6">
-          <div className="flex items-center mb-3">
-            <FaCode className="text-primary-500 text-2xl mr-3" />
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Technical Skills</h2>
-          </div>
-          <div className="bg-custom-dark rounded-xl shadow-lg border border-gray-800 overflow-hidden">
-            <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-            <div className="p-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-primary-400">General Skills</h3>
-                <p className="text-gray-300">Packet Analysis, Communication, Documentation, Organization, Optimization, API Creation and Automation</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-primary-400">Frameworks</h3>
-                <p className="text-gray-300">NIST, MITRE ATT&CK, CIS</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-primary-400">Programming Languages</h3>
-                <p className="text-gray-300">Python, Java, CSS, HTML, JavaScript, Bash, PowerShell, SQL</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-primary-400">Tools</h3>
-                <p className="text-gray-300">Wireshark, Forensic Tool Kit (FTK), Microsoft Office 365, Git/GitHub, ServiceNow, Jira, Visual Studio Code, KnowledgeBase, Slack, MongoDB, PostgreSQL, Postman, Xmind, SentinelOne, Splunk, ImmersiveLabs</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-primary-400">Operating Systems</h3>
-                <p className="text-gray-300">Windows, MacOS, Kali Linux</p>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        {/* Certifications and Awards */}
-        <div className="mb-6">
-          <div className="flex items-center mb-3">
-            <FaAward className="text-primary-500 text-2xl mr-3" />
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Certifications</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-custom-dark rounded-xl shadow-lg border border-gray-800 flex flex-col overflow-hidden">
-              <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-              <div className="p-6 flex-1 flex flex-col">
-              <h3 className="text-lg font-semibold text-white">ISC2 Certified in Cybersecurity (CC)</h3>
-              <p className="text-gray-400 mt-auto">Issued Feb 2024 - Expires Feb 2027</p>
-              </div>
-            </div>
-            <div className="bg-custom-dark rounded-xl shadow-lg border border-gray-800 flex flex-col overflow-hidden">
-              <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-              <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-lg font-semibold text-white">CompTIA Security+</h3>
-              <p className="text-gray-400 mt-auto">Issued Jul 2024 - Expires Jul 2027</p>
-              </div>
-            </div>
-          </div>
-        </div>
+
       
         {/* Professional Experience */}
         <div className="mb-6">

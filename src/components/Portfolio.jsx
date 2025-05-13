@@ -6,33 +6,87 @@ function Portfolio() {
   const [activeTab, setActiveTab] = useState('projects');
 
   return (
-    <div className="w-full max-w-[98%] mx-auto p-2 text-white">
-      <h1 className="text-4xl font-bold text-center mb-3 bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
-        My Portfolio
-      </h1>
-      <p className="text-center text-xl text-gray-300 mb-4 max-w-3xl mx-auto">
-        A collection of cybersecurity and software development projects showcasing my technical skills and expertise.
-      </p>
+    <div style={{
+      width: '100%',
+      padding: '2rem 0',
+      color: 'white',
+      position: 'relative'
+    }}>
+      <div style={{
+        width: '98%',
+        maxWidth: '1800px',
+        margin: '0 auto'
+      }}>
+        <h1 style={{
+          fontSize: '2.5rem',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          marginBottom: '1rem',
+          background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text',
+          color: 'transparent',
+        }}>
+          My Portfolio
+        </h1>
+        <p style={{
+          textAlign: 'center',
+          fontSize: '1.25rem',
+          color: '#a5b4fc',
+          marginBottom: '2rem',
+          maxWidth: '800px',
+          margin: '0 auto 2rem'
+        }}>
+          A collection of cybersecurity and software development projects showcasing my technical skills and expertise.
+        </p>
 
       {/* Portfolio Tabs */}
-      <div className="flex justify-center mb-4">
-        <div className="bg-custom-dark rounded-full p-1 inline-flex shadow-xl border border-gray-800">
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginBottom: '2rem'
+      }}>
+        <div style={{
+          background: 'rgba(17, 24, 39, 0.8)',
+          backdropFilter: 'blur(10px)',
+          borderRadius: '50px',
+          padding: '0.25rem',
+          display: 'inline-flex',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          border: '1px solid rgba(30, 41, 59, 0.8)',
+        }}>
           <button
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-              activeTab === 'projects' 
-                ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg' 
-                : 'text-gray-400 hover:text-white'
-            }`}
+            style={{
+              padding: '0.65rem 1.5rem',
+              borderRadius: '50px',
+              fontSize: '0.95rem',
+              fontWeight: '500',
+              transition: 'all 0.3s ease',
+              background: activeTab === 'projects' 
+                ? 'linear-gradient(to right, #3b82f6, #8b5cf6)' 
+                : 'transparent',
+              color: activeTab === 'projects' ? 'white' : '#a5b4fc',
+              border: 'none',
+              cursor: 'pointer'
+            }}
             onClick={() => setActiveTab('projects')}
           >
             Projects
           </button>
           <button
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-              activeTab === 'courses' 
-                ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg' 
-                : 'text-gray-400 hover:text-white'
-            }`}
+            style={{
+              padding: '0.65rem 1.5rem',
+              borderRadius: '50px',
+              fontSize: '0.95rem',
+              fontWeight: '500',
+              transition: 'all 0.3s ease',
+              background: activeTab === 'courses' 
+                ? 'linear-gradient(to right, #3b82f6, #8b5cf6)' 
+                : 'transparent',
+              color: activeTab === 'courses' ? 'white' : '#a5b4fc',
+              border: 'none',
+              cursor: 'pointer'
+            }}
             onClick={() => setActiveTab('courses')}
           >
             Coursework
@@ -42,11 +96,45 @@ function Portfolio() {
 
       {/* Projects Tab */}
       {activeTab === 'projects' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '1.5rem'
+        }}>
           {/* Project 1 */}
-          <div className="bg-custom-dark border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-primary-900/20 hover:shadow-xl transition-all group">
-            <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-            <div className="p-6">
+          <div style={{
+            position: 'relative',
+            background: 'rgba(17, 24, 39, 0.8)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: '16px',
+            border: '1px solid rgba(30, 41, 59, 0.8)',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            overflow: 'hidden',
+            transition: 'all 0.3s ease',
+            transform: 'translateY(0)'
+          }}
+          className="group"
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-10px)';
+            e.currentTarget.style.boxShadow = '0 30px 60px -12px rgba(59, 130, 246, 0.3)';
+            e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.3)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+            e.currentTarget.style.borderColor = 'rgba(30, 41, 59, 0.8)';
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '9px',
+              background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
+              borderTopLeftRadius: '16px',
+              borderTopRightRadius: '16px'
+            }}></div>
+            <div className="p-6" style={{ paddingTop: 'calc(1.5rem + 3px)' }}>
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-400 mr-3">
                   <FaCode />
@@ -83,9 +171,39 @@ function Portfolio() {
           </div>
 
           {/* Project 2 */}
-          <div className="bg-custom-dark border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-primary-900/20 hover:shadow-xl transition-all group">
-            <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-            <div className="p-6">
+          <div style={{
+            position: 'relative',
+            background: 'rgba(17, 24, 39, 0.8)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: '16px',
+            border: '1px solid rgba(30, 41, 59, 0.8)',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            overflow: 'hidden',
+            transition: 'all 0.3s ease',
+            transform: 'translateY(0)'
+          }}
+          className="group"
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-10px)';
+            e.currentTarget.style.boxShadow = '0 30px 60px -12px rgba(139, 92, 246, 0.3)';
+            e.currentTarget.style.borderColor = 'rgba(139, 92, 246, 0.3)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+            e.currentTarget.style.borderColor = 'rgba(30, 41, 59, 0.8)';
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '9px',
+              background: 'linear-gradient(to right, #8b5cf6, #c4b5fd)',
+              borderTopLeftRadius: '16px',
+              borderTopRightRadius: '16px'
+            }}></div>
+            <div className="p-6" style={{ paddingTop: 'calc(1.5rem + 3px)' }}>
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-secondary-500/10 flex items-center justify-center text-secondary-400 mr-3">
                   <FaServer />
@@ -122,9 +240,39 @@ function Portfolio() {
           </div>
 
           {/* Project 3 */}
-          <div className="bg-custom-dark border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-primary-900/20 hover:shadow-xl transition-all group">
-            <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-            <div className="p-6">
+          <div style={{
+            position: 'relative',
+            background: 'rgba(17, 24, 39, 0.8)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: '16px',
+            border: '1px solid rgba(30, 41, 59, 0.8)',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            overflow: 'hidden',
+            transition: 'all 0.3s ease',
+            transform: 'translateY(0)'
+          }}
+          className="group"
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-10px)';
+            e.currentTarget.style.boxShadow = '0 30px 60px -12px rgba(59, 130, 246, 0.3)';
+            e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.3)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+            e.currentTarget.style.borderColor = 'rgba(30, 41, 59, 0.8)';
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '9px',
+              background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
+              borderTopLeftRadius: '16px',
+              borderTopRightRadius: '16px'
+            }}></div>
+            <div className="p-6" style={{ paddingTop: 'calc(1.5rem + 3px)' }}>
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-400 mr-3">
                   <FaShieldAlt />
@@ -152,9 +300,39 @@ function Portfolio() {
           </div>
 
           {/* Project 4 */}
-          <div className="bg-custom-dark border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-primary-900/20 hover:shadow-xl transition-all group">
-            <div className="h-3 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-            <div className="p-6">
+          <div style={{
+            position: 'relative',
+            background: 'rgba(17, 24, 39, 0.8)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: '16px',
+            border: '1px solid rgba(30, 41, 59, 0.8)',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            overflow: 'hidden',
+            transition: 'all 0.3s ease',
+            transform: 'translateY(0)'
+          }}
+          className="group"
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-10px)';
+            e.currentTarget.style.boxShadow = '0 30px 60px -12px rgba(139, 92, 246, 0.3)';
+            e.currentTarget.style.borderColor = 'rgba(139, 92, 246, 0.3)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+            e.currentTarget.style.borderColor = 'rgba(30, 41, 59, 0.8)';
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '9px',
+              background: 'linear-gradient(to right, #8b5cf6, #c4b5fd)',
+              borderTopLeftRadius: '16px',
+              borderTopRightRadius: '16px'
+            }}></div>
+            <div className="p-6" style={{ paddingTop: 'calc(1.5rem + 3px)' }}>
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-secondary-500/10 flex items-center justify-center text-secondary-400 mr-3">
                   <FaTerminal />
@@ -185,8 +363,30 @@ function Portfolio() {
 
       {/* Coursework Tab */}
       {activeTab === 'courses' && (
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-custom-dark rounded-xl p-8 shadow-xl border border-gray-800">
+        <div style={{
+          maxWidth: '900px',
+          margin: '0 auto'
+        }}>
+          <div style={{
+            position: 'relative',
+            background: 'rgba(17, 24, 39, 0.8)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: '16px',
+            border: '1px solid rgba(30, 41, 59, 0.8)',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            padding: '2rem',
+            paddingTop: 'calc(2rem + 3px)'
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '9px',
+              background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
+              borderTopLeftRadius: '16px',
+              borderTopRightRadius: '16px'
+            }}></div>
             <div className="mb-6 text-center">
               <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent inline-block">Educational Background</h3>
               <p className="text-gray-400">
@@ -286,6 +486,7 @@ function Portfolio() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }

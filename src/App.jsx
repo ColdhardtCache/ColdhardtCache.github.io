@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import NavbarComponent from './components/Navbar';
 import Home from './components/Home';
+import Education from './components/Education';
 import Blog from './components/Blog';
 import Portfolio from './components/Portfolio';
 import Resume from './components/Resume';
@@ -20,6 +21,9 @@ function App() {
       <div style={{ scrollBehavior: 'smooth' }} className="w-full max-w-full">
         <section id="home" className="w-full">
           <Home />
+        </section>
+        <section id="about" className="w-full mt-12">
+          <Education />
         </section>
         <section id="portfolio" className="w-full mt-12">
           <Portfolio />
