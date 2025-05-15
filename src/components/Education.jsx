@@ -1,8 +1,38 @@
 import React from 'react';
-import { FaGraduationCap, FaAward } from 'react-icons/fa';
+import { 
+  FaGraduationCap, 
+  FaAward,
+  FaPython, 
+  FaJava, 
+  FaJs, 
+  FaHtml5, 
+  FaCss3Alt, 
+  FaDatabase, 
+  FaReact, 
+  FaNode,
+  FaTerminal,
+  FaCode,
+  FaWindows
+} from 'react-icons/fa';
 import Skills from './Skills';
+import ProgrammingLanguages from './ProgrammingLanguages';
+import Tools from './Tools';
 
 function Education() {
+
+  // Define icon colors
+  const iconColors = {
+    python: '#3776AB',
+    java: '#ED8B00',
+    javascript: '#F7DF1E',
+    html: '#E34F26',
+    css: '#1572B6',
+    bash: '#4EAA25',
+    powershell: '#5391FE',
+    sql: '#4479A1',
+    react: '#61DAFB',
+    typescript: '#3178C6'
+  };
 
   return (
       <div style={{
@@ -166,92 +196,12 @@ function Education() {
             </div>
           </div>
         </div>
-
+        {/* Skills section */}
         <Skills />
-
-        {/* Programming Languages with Animation */}
-        <div className="mb-12">
-          <div className="flex items-center mb-5">
-            <FaGraduationCap className="text-primary-500 text-3xl mr-3" />
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Programming Languages</h2>
-          </div>
-          <div style={{
-            position: 'relative',
-            background: 'rgba(17, 24, 39, 0.8)',
-            backdropFilter: 'blur(10px)',
-            borderRadius: '16px',
-            border: '1px solid rgba(30, 41, 59, 0.8)',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            padding: '1rem',
-            paddingTop: 'calc(1rem + 9px)',
-            overflow: 'hidden'
-          }}>
-            <style dangerouslySetInnerHTML={{ __html: `
-              @keyframes slideText {
-                0% { transform: translateX(100%); }
-                100% { transform: translateX(-50%); }
-              }
-              .language-scroller {
-                display: flex;
-                white-space: nowrap;
-                overflow: hidden;
-              }
-              .language-ticker {
-                display: inline-flex;
-                animation: slideText 20s linear infinite;
-              }
-              .language-item {
-                display: inline-block;
-                padding: 0.75rem 1.5rem;
-                margin: 0 0.5rem;
-                background: rgba(59, 130, 246, 0.15);
-                border-radius: 50px;
-                color: #e2e8f0;
-                font-weight: 500;
-                transition: all 0.3s ease;
-              }
-              .language-item:hover {
-                transform: translateY(-5px);
-                background: rgba(59, 130, 246, 0.25);
-              }
-            `}} />
-
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              height: '9px',
-              background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
-              borderTopLeftRadius: '16px',
-              borderTopRightRadius: '16px'
-            }}></div>
-
-            <div className="language-scroller">
-              <div className="language-ticker">
-                <span className="language-item">Python</span>
-                <span className="language-item">Java</span>
-                <span className="language-item">JavaScript</span>
-                <span className="language-item">HTML</span>
-                <span className="language-item">CSS</span>
-                <span className="language-item">Bash</span>
-                <span className="language-item">PowerShell</span>
-                <span className="language-item">SQL</span>
-
-                {/* These duplicates are needed for continuous animation,
-                    but they'll only show after the first set scrolls off-screen */}
-                <span className="language-item" style={{opacity: 0}}>Python</span>
-                <span className="language-item" style={{opacity: 0}}>Java</span>
-                <span className="language-item" style={{opacity: 0}}>JavaScript</span>
-                <span className="language-item" style={{opacity: 0}}>HTML</span>
-                <span className="language-item" style={{opacity: 0}}>CSS</span>
-                <span className="language-item" style={{opacity: 0}}>Bash</span>
-                <span className="language-item" style={{opacity: 0}}>PowerShell</span>
-                <span className="language-item" style={{opacity: 0}}>SQL</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Programming Languages section */}
+        <ProgrammingLanguages />
+        {/* Tools section */}
+        <Tools />
 
       </div>
     </div>
